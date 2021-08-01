@@ -1,0 +1,118 @@
+.cart {
+  min-height: 100vh;
+  display: grid;
+  background-color: #f8f9fa;
+  @include breakpoint-up(medium) {
+    grid-template-columns: minmax(1rem, 1fr) 50rem minmax(1rem, 1fr);
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    @include breakpoint-up(medium) {
+      grid-column: 2 /3;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    background-color: $very-light-gray;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    @include breakpoint-up(medium) {
+      grid-template-columns: 80px 1fr;
+    }
+  }
+
+  &__wrapper {
+    min-height: 60vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 5rem;
+    @include breakpoint-up(medium) {
+      grid-column: 2 /3;
+    }
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+  }
+
+  &__desc {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.5fr;
+    place-items: center center;
+  }
+
+  &__product-title {
+    margin: 0;
+    word-wrap: break-all;
+  }
+
+  &__quantity {
+    margin: 0;
+    &-btn {
+      background-color: $primary-color;
+      color: $white-color;
+      border-radius: 50%;
+      width: 27px;
+      text-align: center;
+      margin-right: 0.5rem;
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &-text {
+      grid-column: 2 / 3;
+      grid-row: 1 / span 2;
+      align-self: center;
+    }
+  }
+
+  &__delete-btn {
+    color: $primary-color;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @include breakpoint-up(medium) {
+      grid-column: 2 /3;
+    }
+
+    &-total {
+      margin: 0;
+      font-size: 0.85rem;
+      span {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__back-btn {
+    transition: opacity 150ms ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $primary-color;
+    @include breakpoint-up(medium) {
+      grid-column: 2 /3;
+    }
+  }
+}

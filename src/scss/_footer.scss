@@ -1,0 +1,33 @@
+.footer {
+  padding: 4rem 0;
+  background: $primary-color;
+  color: $white-color;
+
+  &__wrapper {
+    display: grid;
+    line-height: 2;
+    gap: 4rem;
+
+    @include breakpoint-up(small) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint-up(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__links > *:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    color: $white-color;
+
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  }
+}

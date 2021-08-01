@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: $white-color;
+  padding: 1rem 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  &__list {
+    visibility: hidden;
+    @include breakpoint-down(medium) {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      inset: 0 0 0 0;
+      height: 100vh;
+    }
+
+    @include breakpoint-up(medium) {
+      visibility: visible;
+    }
+
+    &.nav-open {
+      visibility: visible;
+      animation: fadeIn 0.3s ease-in-out alternate;
+    }
+
+    &.nav-close {
+      animation: fadeOut 0.3s ease-in-out;
+    }
+  }
+
+  &__items {
+    display: flex;
+    @include breakpoint-down(medium) {
+      position: relative;
+      top: 10%;
+      max-width: 300px;
+      background-color: #ffffff;
+      flex-direction: column;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__item {
+    @include breakpoint-down(medium) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 150ms ease-in-out, text-decoration 150ms ease-in-out;
+    @include breakpoint-down(medium) {
+      font-size: 1.25rem;
+    }
+
+    &:focus,
+    &:hover {
+      color: rgba(0, 0, 0, 0.7);
+      text-decoration: underline;
+    }
+  }
+
+  &__end {
+    &-shopping {
+      position: relative;
+
+      span {
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        font-size: 0.75rem;
+        background-color: $primary-color;
+        color: $white-color;
+        padding: 0.25rem;
+        border-radius: 50%;
+        min-width: 23px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__close-btn {
+    margin-left: auto;
+
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+  }
+
+  &__toggle-btn {
+    display: none;
+    @include breakpoint-down(medium) {
+      display: inline-block;
+    }
+  }
+}

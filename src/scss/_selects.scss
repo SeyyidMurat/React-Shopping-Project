@@ -1,0 +1,33 @@
+.selects {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 3rem;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  &__desc {
+    position: absolute;
+    inset: 50% 0 0 0;
+    padding: 3rem 0 0 3rem;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 1%,
+      rgba(57, 56, 56, 0.9) 71%
+    );
+    h3 {
+      margin-bottom: 0.85rem;
+      letter-spacing: 1.75px;
+      color: $white-color;
+    }
+  }
+}

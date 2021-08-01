@@ -1,0 +1,56 @@
+.hero {
+  position: relative;
+  height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        176deg,
+        rgba(255, 255, 255, 0.1) 5%,
+        rgba(129, 122, 122, 0.8) 71%
+      ),
+      url('../asstes/home.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    color: $white-color;
+    display: grid;
+    grid-template-columns: minmax(1rem, 0.25fr) fit-content(36rem) 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    z-index: 2;
+  }
+
+  &__content {
+    grid-column: 2 /3;
+    grid-row: 2 / 3;
+
+    span {
+      color: $light-gray-clr;
+    }
+  }
+
+  &__title {
+    font-size: calc(1.75rem + 1.75vw);
+  }
+
+  &__btn {
+    background: $primary-color;
+    color: $white-color;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    transition: all 150ms ease-in-out;
+    &:hover,
+    &:focus {
+      background-color: $white-color;
+      color: $primary-color;
+    }
+  }
+}

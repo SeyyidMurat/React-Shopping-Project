@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: $white-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input[type='text'],
+input[type='email'] {
+  outline: none;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: $black-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+.container-xl {
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.btn {
+  min-width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  border-radius: 0.25rem;
+  transition: all 150ms ease-in-out;
+  &-outline {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    &:hover {
+      background-color: rgba($primary-color, 0.7);
+      color: $white-color;
+    }
+  }
+
+  &-contained {
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: $primary-color;
+    }
+  }
+}
+
+.slipt > * + * {
+  margin-top: 1.5rem;
+}
+
+.icon__btn {
+  display: inline-block;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 180ms ease-in-out;
+  vertical-align: top;
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  &:focus,
+  &:hover {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Animations
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
